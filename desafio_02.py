@@ -186,8 +186,8 @@ def main():
         resposta = None
         while resposta not in ['y','yes','yep','n','not','nope']:
             resposta = input('Gostaria de abrir outro desafio? [y/n]: ')
-            if resposta in ['n','nope','not']:
-                break
+        if resposta in ['n','nope','not']:
+            break
 
 if __name__ == "__main__":
     main()
