@@ -208,37 +208,41 @@ def desafio15():
 def desafio16():
     print("Neste desafio, informarei o resultado da tabela verdade AND das duas variáveis booleanas.")
     while True:
-        try:
-            valor1 = bool(input("Digite o primeiro valor (True/False): "))
-        except ValueError:
-            continue
-        else:
+        valor1 = input("Digite o primeiro valor (True/False): ").upper()
+        if valor1 in [0,'F','FALSE','FALSO']:
+            valor1 = False
+            break
+        elif valor1 in ['1','T','TRUE','V','VERDADEIRO']:
+            valor1 = True
             break
     while True:
-        try:
-            valor2 = bool(input("Digite o segundo valor (True/False): "))
-        except ValueError:
-            continue
-        else:
+        valor2 = input("Digite o segundo  valor (True/False): ").upper()
+        if valor2 in ['0','F','FALSE','FALSO']:
+            valor2 = False
             break
-    return f'{valor1} and {valor2} = {valor1 or valor2}'
+        elif valor2 in [1,'T','TRUE','V','VERDADEIRO']:
+            valor2 = True
+            break
+    return f'{valor1} and {valor2} = {valor1 and valor2}'
 
 #17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
 def desafio17():
     print("Neste desafio, informarei o resultado da tabela verdade OR das duas variáveis booleanas.")
     while True:
-        try:
-            valor1 = bool(input("Digite o primeiro valor (True/False): "))
-        except ValueError:
-            continue
-        else:
+        valor1 = input("Digite o primeiro valor (True/False): ").upper()
+        if valor1 in ['0','F','FALSE','FALSO']:
+            valor1 = False
+            break
+        elif valor1 in ['1','T','TRUE','V','VERDADEIRO']:
+            valor1 = True
             break
     while True:
-        try:
-            valor2 = bool(input("Digite o segundo valor (True/False): "))
-        except ValueError:
-            continue
-        else:
+        valor2 = input("Digite o segundo valor (True/False): ").upper()
+        if valor2 in ['0','F','FALSE','FALSO']:
+            valor2 = False
+            break
+        elif valor2 in ['1','T','TRUE','V','VERDADEIRO']:
+            valor2 = True
             break
     return f'{valor1} or {valor2} = {valor1 or valor2}'
 
@@ -246,14 +250,16 @@ def desafio17():
 def desafio18():
     print("Neste desafio, informarei o resultado da tabela verdade NOT da variável booleana.")
     while True:
-        try:
-            valor1 = bool(input("Digite o valor (True/False): "))
-        except ValueError:
-            continue
-        else:
+        valor1 = input("Digite um valor (True/False): ").upper()
+        if valor1 in ['0','F','FALSE','FALSO']:
+            valor1 = False
             break
-        resultado = not valor1
-        return f'O resultado de NOT é: {resultado}'
+        elif valor1 in ['1','T','TRUE','V','VERDADEIRO']:
+            valor1 = True
+            break
+
+    resultado = not valor1
+    return f'NOT {valor1} = {resultado}'
 
 #19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 def desafio19():
@@ -261,9 +267,9 @@ def desafio19():
     valor1 = input('Digite a primeira entrada: ')
     valor2 = input('Digite a segunda entrada: ')
     if valor1 == valor2:
-        return f"Os valores {valor1} são iguais."
+        return f'Os valores "{valor1}" são iguais.'
     else:
-        return f"Os valores {valor1} e {valor2} são diferentes."
+        return f'Os valores "{valor1}" e "{valor2}" são diferentes.'
 
 #20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 def desafio20():
@@ -281,10 +287,10 @@ def desafio20():
                 continue
             else:
                 break
-    if valor1 == valor2:
-        return f'Os valores {valor1:.2f} são iguais.'
+    if valor1 != valor2:
+        return f'Os valores "{valor1:.2f}" e "{valor2:.2f}" são diferentes.'
     else:
-        return f'Os valores {valor1:.2f} e {valor2:.2f} são diferentes.'
+        return f'Os valores "{valor1:.2f}" são iguais.'
 
 
 menu = """MENU DE DESAFIOS
@@ -352,9 +358,9 @@ def main():
 
         resultado = desafios[desafio]()
 
-        print(9*"~=~","RESULTADO",9*"~=~")
-        print(f'{resultado:^43}')
-        print(9*"~=~=~")
+        print(7*"~=~","RESULTADO",7*"~=~")
+        print(f'{resultado:^50}')
+        print(9*"~=~=~=")
         resposta = None
         while resposta not in ['y','yes','yep','n','not','nope']:
             resposta = input('Gostaria de abrir outro desafio? [y/n]: ').lower()
