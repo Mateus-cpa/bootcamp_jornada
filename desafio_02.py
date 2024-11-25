@@ -52,71 +52,239 @@ def desafio03():
 
 #04. Faça um programa que peça dois números inteiros e imprima a divisão inteira do primeiro pelo segundo.
 def desafio04():
-    return None
+    print("Neste desafio, retornarei a divisão inteira do primeiro número inteiro sobre o segundo para você")
+    while True:
+        try:
+            n1 = int(input("Digite o primeiro número inteiro: "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            n2 = int(input("Digite o segundo número inteiro: "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return n1 // n2
 
 #05. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
 def desafio05():
-    return None
+    print("Neste desafio, retornarei a segunda potência de um número inteiro para você.")
+    while True:
+        try:
+            n1 = int(input("Digite um número inteiro: "))
+        except ValueError:
+            continue
+        else:
+            break
+        
+    return n1 ** 2
 
 #06. Escreva um programa que receba dois números flutuantes e realize sua adição.
 def desafio06():
-    return None
+    print("Neste desafio, somarei 2 números reais para você")
+    while True:
+        try:
+            n1 = float(input("Digite o primeiro número real: "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            n2 = float(input("Digite o segundo número real: "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return n1 + n2
 
 #07. Crie um programa que calcule a média de dois números flutuantes fornecidos pelo usuário.
 def desafio07():
-    return None
+    print("Neste desafio, calcularei a média entre 2 números reais para você")
+    while True:
+        try:
+            n1 = float(input("Digite o primeiro número real: "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            n2 = float(input("Digite o segundo número real: "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return (n1 + n2)/2
 
 #08. Desenvolva um programa que calcule a potência de um número (base e expoente fornecidos pelo usuário).
 def desafio08():
-    return None
+    print("Neste desafio, calcularei a potência da base e do expoente que você fornecer")
+    while True:
+        try:
+            n1 = float(input("Digite a base (número real): "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            n2 = float(input("Digite o expoente (número real): "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return n1 ** n2
 
 #09. Faça um programa que converta a temperatura de Celsius para Fahrenheit.
 def desafio09():
-    return None
+    print("Neste desafio, converteri a temperatura de graus Celsius para Fahrenhiet")
+    while True:
+        try:
+            n1 = float(input("Digite a temperatura em graus Celsius (número real): "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return f'{n1 * 9/5 + 32} Fahrenheit'
 
 #10. Escreva um programa que calcule a área de um círculo, recebendo o raio como entrada.
 def desafio10():
-    return None
+    print("Neste desafio, calcularei a área do círculo a partir do raio fornecido")
+    import math
+    while True:
+        try:
+            n1 = float(input("Digite o raio do círculo a ser calculado (número real): "))
+        except ValueError:
+            continue
+        else:
+            break
+    
+    return f'área = {n1 ** 2 * math.pi:.2f}'
 
 #11. Escreva um programa que receba uma string do usuário e a converta para maiúsculas.
 def desafio11():
-    return None
+    print("Neste desafio, converterei o texto informado em caixa alta (maiúsculas).")    
+    n1 = input("Digite o texto a ser convertido: ")        
+    return n1.upper()
 
 #12. Crie um programa que receba o nome completo do usuário e imprima o nome com todas as letras minúsculas.
 def desafio12():
-    return None
+    print("Neste desafio, converterei o texto informado em caixa baixa (minúsculas).")    
+    n1 = input("Digite o texto a ser convertido: ")        
+    return n1.lower()
 
 #13. Desenvolva um programa que peça ao usuário para inserir uma frase e, em seguida, imprima esta frase sem espaços em branco no início e no final.
 def desafio13():
-    return None
+    print("Neste desafio, retirarei do texto informado eventuais espaços no início e no fim.")
+    n1 = input("Digite o texto a ser transformado: ")        
+    return n1.strip()
 
 #14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
 def desafio14():
-    return None
+    print("Neste desafio, dividirei a data entre dia, mês e ano.")
+    data = input("Digite uma data em formato dd/mm/yyyy: ")
+    dia = data.split('/')[0]
+    mes = data.split('/')[1]
+    ano = data.split('/')[2]
+    return f'dia: {dia}; mês: {mes}; ano: {ano}'
 
 #15. Escreva um programa que concatene duas strings fornecidas pelo usuário.
 def desafio15():
-    return None
+    print("Neste desafio, concatenarei dois textos que você me fornecer.")
+    texto1 = input("Digite o primeiro texto: ")
+    texto2 = input("Digite o segundo texto: ")
+    return texto1 + texto2
 
 #16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
 def desafio16():
-    return None
+    print("Neste desafio, informarei o resultado da tabela verdade AND das duas variáveis booleanas.")
+    while True:
+        try:
+            valor1 = bool(input("Digite o primeiro valor (True/False): "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            valor2 = bool(input("Digite o segundo valor (True/False): "))
+        except ValueError:
+            continue
+        else:
+            break
+    return f'{valor1} and {valor2} = {valor1 or valor2}'
 
 #17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
 def desafio17():
-    return None
+    print("Neste desafio, informarei o resultado da tabela verdade OR das duas variáveis booleanas.")
+    while True:
+        try:
+            valor1 = bool(input("Digite o primeiro valor (True/False): "))
+        except ValueError:
+            continue
+        else:
+            break
+    while True:
+        try:
+            valor2 = bool(input("Digite o segundo valor (True/False): "))
+        except ValueError:
+            continue
+        else:
+            break
+    return f'{valor1} or {valor2} = {valor1 or valor2}'
 
 #18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
 def desafio18():
-    return None
+    print("Neste desafio, informarei o resultado da tabela verdade NOT da variável booleana.")
+    while True:
+        try:
+            valor1 = bool(input("Digite o valor (True/False): "))
+        except ValueError:
+            continue
+        else:
+            break
+        resultado = not valor1
+        return f'O resultado de NOT é: {resultado}'
 
 #19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 def desafio19():
-    return None
+    print("Neste desafio, copararei se são iguais as duas entradas de dados.")
+    valor1 = input('Digite a primeira entrada: ')
+    valor2 = input('Digite a segunda entrada: ')
+    if valor1 == valor2:
+        return f"Os valores {valor1} são iguais."
+    else:
+        return f"Os valores {valor1} e {valor2} são diferentes."
 
 #20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 def desafio20():
-    return None
+    while True:
+            try:
+                valor1 = float(input("Digite o primeiro valor: "))
+            except ValueError:
+                continue
+            else:
+                break
+    while True:
+            try:
+                valor2 = float(input("Digite o segundo valor: "))
+            except ValueError:
+                continue
+            else:
+                break
+    if valor1 == valor2:
+        return f'Os valores {valor1:.2f} são iguais.'
+    else:
+        return f'Os valores {valor1:.2f} e {valor2:.2f} são diferentes.'
 
 
 menu = """MENU DE DESAFIOS
@@ -154,6 +322,8 @@ def main():
             except ValueError:
                 continue
         
+        
+        print(10*"*=*")
         print("Você escolheu o desafio ",desafio,"!")
 
         desafios = {
@@ -177,16 +347,18 @@ def main():
         18: desafio18,
         19: desafio19,
         20: desafio20}
+        
+
 
         resultado = desafios[desafio]()
 
-        print(4*"~=~","RESULTADO",4*"~=~")
-        print(f'{resultado:^33}')
-        print(7*"~=~=~")
+        print(9*"~=~","RESULTADO",9*"~=~")
+        print(f'{resultado:^43}')
+        print(9*"~=~=~")
         resposta = None
         while resposta not in ['y','yes','yep','n','not','nope']:
-            resposta = input('Gostaria de abrir outro desafio? [y/n]: ')
-        if resposta in ['n','nope','not']:
+            resposta = input('Gostaria de abrir outro desafio? [y/n]: ').lower()
+        if resposta in ['n','nope','not','nao','não']:
             break
 
 if __name__ == "__main__":
