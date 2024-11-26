@@ -66,7 +66,10 @@ def desafio04():
         except ValueError:
             continue
         else:
-            break
+            if n2 == 0: #não pode ser dividido por 0
+                continue
+            else:
+                break
     
     return n1 // n2
 
@@ -191,7 +194,13 @@ def desafio13():
 #14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
 def desafio14():
     print("Neste desafio, dividirei a data entre dia, mês e ano.")
-    data = input("Digite uma data em formato dd/mm/yyyy: ")
+    #while True:
+        #try:
+        #data = input("Digite uma data em formato dd/mm/yyyy: ")
+        #from datetime import datetime
+       # data = datetime.strptime(data, "%d/%m;%Y")
+        #except 
+    data = input("Digite uma data em formato dd/mm/yyyy: ")    
     dia = data.split('/')[0]
     mes = data.split('/')[1]
     ano = data.split('/')[2]
