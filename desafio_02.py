@@ -272,7 +272,7 @@ def desafio18():
 
 #19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
 def desafio19():
-    print("Neste desafio, copararei se são iguais as duas entradas de dados.")
+    print("Neste desafio, compararei se são iguais as duas entradas de dados.")
     valor1 = input('Digite a primeira entrada: ')
     valor2 = input('Digite a segunda entrada: ')
     if valor1 == valor2:
@@ -282,6 +282,7 @@ def desafio19():
 
 #20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 def desafio20():
+    print("Neste desafio, compararei se são diferentes as duas entradas de dados.")
     while True:
             try:
                 valor1 = float(input("Digite o primeiro valor: "))
@@ -301,6 +302,52 @@ def desafio20():
     else:
         return f'Os valores "{valor1:.2f}" são iguais.'
 
+#Exercício 21: Conversor de Temperatura
+# Escreva um programa que converta a temperatura de Celsius para Fahrenheit. 
+# O programa deve solicitar ao usuário a temperatura em Celsius e, utilizando try-except, garantir que a
+# entrada seja numérica, tratando qualquer ValueError. 
+# Imprima o resultado em Fahrenheit ou uma mensagem de erro se a entrada não for válida.
+def desafio21 ():
+    print('Neste desafio converterei a temperatura de Celsius para Fahrenheit.')
+    while True:
+        try:
+            temp_c = float(input('Digite a temperatura em Celsius para conversão:'))
+            if isinstance(temp_c,float):
+                break
+        except ValueError:
+            print('Você deve digitar um número.')
+    return f'{temp_c}º C = {temp_c *9/5 +32}º F'
+
+#Exercício 22: Verificador de Palíndromo
+# Crie um programa que verifica se uma palavra ou frase é um palíndromo 
+# (lê-se igualmente de trás para frente, desconsiderando espaços e pontuações). 
+# Utilize try-except para garantir que a entrada seja uma string. 
+# Dica: Utilize a função isinstance() para verificar o tipo da entrada.
+def desafio22():
+    return None
+#Exercício 23: Calculadora Simples
+# Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. 
+# Use try-except para lidar com divisões por zero e entradas não numéricas. 
+# Utilize if-elif-else para realizar a operação matemática baseada no operador fornecido. 
+# Imprima o resultado ou uma mensagem de erro apropriada.
+def desafio23():
+    return None
+#Exercício 24: Classificador de Números
+# Escreva um programa que solicite ao usuário para digitar um número. 
+# Utilize try-except para assegurar que a entrada seja numérica e utilize if-elif-else 
+# para classificar o número como "positivo", "negativo" ou "zero". 
+# Adicionalmente, identifique se o número é "par" ou "ímpar".
+def desafio24():
+    return None
+#Exercício 25: Conversão de Tipo com Validação
+# Crie um script que solicite ao usuário uma lista de números separados por vírgula. 
+# O programa deve converter a string de entrada em uma lista de números inteiros. 
+# Utilize try-except para tratar a conversão de cada número e validar que 
+# cada elemento da lista convertida é um inteiro. 
+# Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. 
+# Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
+def desafio25():
+    return None
 
 menu = """MENU DE DESAFIOS
 #01. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
@@ -331,7 +378,7 @@ def main():
     while True:
         print(menu)
         desafio = None
-        while desafio not in range(1,21):
+        while desafio not in range(1,26):
             try:
                 desafio = int(input("Escolha o desafio de 1 a 20: \n"))
             except ValueError:
@@ -361,7 +408,12 @@ def main():
         17: desafio17,
         18: desafio18,
         19: desafio19,
-        20: desafio20}
+        20: desafio20,
+        21: desafio21,
+        22: desafio22,
+        23: desafio23,
+        24: desafio24,
+        25: desafio25}
         
 
 
