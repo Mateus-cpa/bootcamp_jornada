@@ -1,5 +1,5 @@
 <h1 align="center"> BOOTCAMP PYTHON </h1>
-(https://d1tumxpvm7f0a4.cloudfront.net/app/courses/thumbnail/1139822/01--BootCamp-Python-png?v=1718150914)
+[Jornada de Dados](image.png)
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
