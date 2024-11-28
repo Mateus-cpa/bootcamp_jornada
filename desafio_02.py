@@ -325,13 +325,49 @@ def desafio21 ():
 # Dica: Utilize a função isinstance() para verificar o tipo da entrada.
 def desafio22():
     return None
+
 #Exercício 23: Calculadora Simples
 # Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. 
 # Use try-except para lidar com divisões por zero e entradas não numéricas. 
 # Utilize if-elif-else para realizar a operação matemática baseada no operador fornecido. 
 # Imprima o resultado ou uma mensagem de erro apropriada.
 def desafio23():
-    return None
+    print('Neste desafio realizarei uma operação de calculadora básica.')
+    while True:
+        try:
+            n1 = float(input('Digite o primeiro número: '))
+            if isinstance(n1,float):
+                break
+        except ValueError:
+            print('Você deve digitar um número.')
+    
+    while True:
+        operacao = input("Digite uma operação (+, -, *, /): ").strip()
+        if operacao in ['+', '-', '*', '/']:
+            break
+        else:
+            print('Você deve digitar uma das operações informadas.')
+
+    while True:
+        try:
+            n2 = float(input('Digite o segundo número: '))
+            if isinstance(n2,float):
+                if (operacao == "/" and n2 == 0):
+                    print('Não é possível dividir por 0')
+                else:
+                    break
+        except ValueError:
+            print('Você deve digitar um número.')
+    
+    if operacao == "+":
+        return f"{n1} + {n2} = {n1+n2}"
+    elif operacao == "-":
+        return f"{n1} - {n2} = {n1-n2}"
+    elif operacao == "*":
+        return f"{n1} * {n2} = {n1*n2}"
+    elif operacao == "/":
+        return f"{n1} / {n2} = {n1/n2}"
+
 #Exercício 24: Classificador de Números
 # Escreva um programa que solicite ao usuário para digitar um número. 
 # Utilize try-except para assegurar que a entrada seja numérica e utilize if-elif-else 
@@ -369,8 +405,11 @@ menu = """MENU DE DESAFIOS
 #17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
 #18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
 #19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
-#20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes."""
-
+#20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
+#21. Faça um programa que converta a temperatura de Celsius para Fahrenheitcom checagem de erro.
+#22. Faça um detector de palíndromo.
+#23. Faça uma calculadora simples
+"""
 
 
 
