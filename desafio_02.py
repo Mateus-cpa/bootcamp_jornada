@@ -383,7 +383,26 @@ def desafio23():
 # para classificar o número como "positivo", "negativo" ou "zero". 
 # Adicionalmente, identifique se o número é "par" ou "ímpar".
 def desafio24():
-    return None
+    print("Neste desafio, classificarei o número inteiro que você digitar.")
+    while True:
+        try:
+            n1 = int(input("Digite um número inteiro: "))
+        except ValueError:
+            continue
+        else:
+            break
+    if n1 > 0:
+        tipo_n1 = 'positivo'
+    elif n1 < 0:
+        tipo_n1 = 'negativo'
+    else:
+        tipo_n1 = 'neutro'
+    if n1 % 2 == 0:
+        par_n1 = 'par'
+    else:
+        par_n1 = 'ímpar'
+    return f'O número {n1} é {tipo_n1} e {par_n1}.'
+
 #Exercício 25: Conversão de Tipo com Validação
 # Crie um script que solicite ao usuário uma lista de números separados por vírgula. 
 # O programa deve converter a string de entrada em uma lista de números inteiros. 
@@ -392,7 +411,16 @@ def desafio24():
 # Se a conversão falhar ou um elemento não for um inteiro, imprima uma mensagem de erro. 
 # Se a conversão for bem-sucedida para todos os elementos, imprima a lista de inteiros.
 def desafio25():
-    return None
+    print("Neste desafio, tentarei converter uma lista de números separados por vírgula.")
+    lista = input('Digite uma lista de números separados por vírgula: ')
+    lista_separada = lista.split(',')
+    try:
+        for i in lista_separada:
+            int(lista_separada[1])
+    except ValueError:
+        return 'Não foi possível converter sua lista em números'
+    else:
+        return lista_separada
 
 menu = """MENU DE DESAFIOS
 #01. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
@@ -418,6 +446,8 @@ menu = """MENU DE DESAFIOS
 #21. Faça um programa que converta a temperatura de Celsius para Fahrenheitcom checagem de erro.
 #22. Faça um detector de palíndromo.
 #23. Faça uma calculadora simples.
+#24. Classifique um número intenro em (positivo/negativo/neutro) e (par/ímpar).
+#25. Converta uma lista de números de string para lista.
 """
 
 
@@ -468,8 +498,11 @@ def main():
         resultado = desafios[desafio]()
 
         print(7*"~=~","RESULTADO",7*"~=~")
-        print(f'{resultado:^50}')
-        print(9*"~=~=~=")
+        try:
+            print(f'{resultado:^50}')
+        except TypeError:
+            print (resultado)
+        print(25*"~=")
         resposta = None
         while resposta not in ['y','yes','yep','n','not','nope']:
             resposta = input('Gostaria de abrir outro desafio? [y/n]: ').lower()
