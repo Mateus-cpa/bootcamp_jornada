@@ -324,7 +324,16 @@ def desafio21 ():
 # Utilize try-except para garantir que a entrada seja uma string. 
 # Dica: Utilize a função isinstance() para verificar o tipo da entrada.
 def desafio22():
-    return None
+    print('Neste desafio testarei se o texto ou palavra escrita é um palíndromo.')
+    teste_palindromo = input('Digite a palavra a ser testada: ')
+    lista_palindromo = teste_palindromo.replace(" ","").lower()
+    lista_palindromo = list(teste_palindromo)
+    lista_reversa = lista_palindromo[::-1]
+    if lista_palindromo == lista_reversa:
+        return f'"{teste_palindromo}" é um palíndromo.'
+    else:
+        return f'"{teste_palindromo}" NÃO é um palíndromo.'
+
 
 #Exercício 23: Calculadora Simples
 # Desenvolva uma calculadora simples que aceite duas entradas numéricas e um operador (+, -, *, /) do usuário. 
@@ -408,7 +417,7 @@ menu = """MENU DE DESAFIOS
 #20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 #21. Faça um programa que converta a temperatura de Celsius para Fahrenheitcom checagem de erro.
 #22. Faça um detector de palíndromo.
-#23. Faça uma calculadora simples
+#23. Faça uma calculadora simples.
 """
 
 
@@ -419,7 +428,7 @@ def main():
         desafio = None
         while desafio not in range(1,26):
             try:
-                desafio = int(input("Escolha o desafio de 1 a 20: \n"))
+                desafio = int(input("Escolha o desafio de 1 a 25: \n"))
             except ValueError:
                 continue
         
