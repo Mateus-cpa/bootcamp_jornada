@@ -13,5 +13,8 @@ Bateria de 25 exercícios básicos para python:
 - 5 de inteiros, 
 - 5 de floats, 
 - 5 de strings, 
-- 5 de booleanos e 
-- 5 de Type check.
+- 5 de booleanos,
+- 5 de Type check,
+- 5 de controle de fluxo,
+- 5 de FOR,
+- 5 de WHILE.
