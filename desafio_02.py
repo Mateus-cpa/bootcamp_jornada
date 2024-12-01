@@ -428,7 +428,16 @@ def desafio25():
 #Escreva um programa que verifique esses campos e imprima "Dados válidos" 
 #se ambos forem positivos ou "Dados inválidos" caso contrário.
 def desafio26():
-    return None
+    print('Neste desafio, vou registrar a quantidade e preço de compra de um produto.')
+    quantidade = input('Digite a quantidade comprada: ')
+    preco = input('Digite o preço do produto comprado: ')
+    try:
+        if int(quantidade) > 0 and float(preco) > 0:
+            return 'Dados válidos'
+        else:
+            return 'Dados inválidos (valor não positivo)'
+    except ValueError:
+        return 'Dados inválidos (tipo não numérico)'
 
 #Exercício 27: Classificação de Dados de Sensor
 #Imagine que você está trabalhando com dados de sensores IoT. 
@@ -571,7 +580,7 @@ def main():
     while True:
         print(menu)
         desafio = None
-        while desafio not in range(1,26):
+        while desafio not in range(1,41):
             try:
                 desafio = int(input("Escolha o desafio de 1 a 25: \n"))
             except ValueError:
