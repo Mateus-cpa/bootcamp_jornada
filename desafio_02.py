@@ -447,7 +447,20 @@ def desafio26():
 #Temperatura >= 18°C e <= 26°C é 'Normal'
 #Temperatura > 26°C é 'Alta'
 def desafio27():
-    return None
+    print('Este desafio tem como objetivo avaliar e classificar a temperatura informada.')
+    while True:
+        try:
+            temperatura = float(input('Digite a temperatura a ser avaliada em ºC: '))
+        except ValueError:
+            print('Você precisa digitrar um número...')
+        else:
+            break
+    if temperatura < 18:
+        return 'Baixa'
+    elif temperatura <= 26:
+        return 'Normal'
+    else:
+        return 'Alta' 
 
 #Exercício 28: Filtragem de Logs por Severidade
 #Você está analisando logs de uma aplicação e precisa filtrar mensagens com severidade 'ERROR'. 
@@ -455,7 +468,16 @@ def desafio27():
 # log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 def desafio28():
-    return None
+    log = [{'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão remota'},
+           {'timestamp': '2024-12-01 21:00:00', 'level': 'OK', 'message': 'Conexão estabelecida'},
+           {'timestamp': '2024-12-01 22:00:00', 'level': 'OK', 'message': 'Conexão estabelecida'},
+           {'timestamp': '2024-12-01 23:00:00', 'level': 'ERROR', 'message': 'Falha na conexão servidor'}]
+    log_erro = {}
+    for registro in log:
+        if registro['level'] == 'ERROR':
+            log_erro[registro['timestamp']] = registro['message']
+    
+    return log_erro
 
 #Exercício 29: Validação de Dados de Entrada
 #Antes de processar os dados de usuários em um sistema de recomendação, 
@@ -582,7 +604,7 @@ def main():
         desafio = None
         while desafio not in range(1,41):
             try:
-                desafio = int(input("Escolha o desafio de 1 a 25: \n"))
+                desafio = int(input("Escolha o desafio de 1 a 40: \n"))
             except ValueError:
                 continue
         
