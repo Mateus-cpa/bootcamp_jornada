@@ -658,12 +658,12 @@ def main():
 
         resultado = desafios[desafio]()
 
-        print(7*"~=~","RESULTADO",7*"~=~")
+        print(8*"~=~","RESULTADO",8*"~=~")
         try:
-            print(f'{resultado:^50}')
+            print(f'{resultado:^59}')
         except TypeError:
             print (resultado)
-        print(25*"~=")
+        print(59*"=")
         resposta = None
         while resposta not in ['y','yes','yep','n','not','nope']:
             resposta = input('Gostaria de abrir outro desafio? [y/n]: ').lower()
