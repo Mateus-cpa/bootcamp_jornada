@@ -485,7 +485,27 @@ def desafio28():
 # Escreva um programa que valide essas condições e imprima "Dados de usuário válidos" 
 # ou o erro específico encontrado.
 def desafio29():
-    return None
+    print('Neste desafio validarei sua idade e email.')
+    while True:
+        try:
+            idade = int(input('Digite sua idade: '))
+        except ValueError:
+            print('Digite um valor válido...')
+        else:
+            break
+    email = input('Digite seu email: ')
+    idade_valida, email_valido = False
+    if idade >= 18 and idade <= 65:
+        idade_valida = True
+    if '@' in email: #arrumar para colocar ponto também
+        email_valido = True
+
+    if idade_valida == True and email_valido == True:
+        return f'idade {idade} e email {email} válidos'
+    elif idade_valida == False and email_valido == False:
+        return f'idade {idade} e email {email} inválidos'
+    elif idade_valida == False and email_valido == True:
+        return f'idade {idade} e email {email} válidos'
 
 #Exercício 30: Detecção de Anomalias em Dados de Transações
 #Você está trabalhando em um sistema de detecção de fraude e precisa identificar transações suspeitas.
