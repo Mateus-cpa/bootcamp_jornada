@@ -521,18 +521,27 @@ def desafio29():
 def desafio30():
     import random
     lista_transacoes = []
-    for i in range(0,20):
+    lista_transacoes_suspeitas = []
+    for i in range(1,21):
         transacao = {}
         transacao['registro'] = i
         transacao['valor'] = random.randint(1,20000)
         transacao['hora'] = random.randint(0,23)
-        lista_transacoes.append(transacao)
-    return lista_transacoes
+        lista_transacoes.append(transacao) #lista completa
+        if (transacao['valor'] > 10000 and (transacao['hora'] > 18 or transacao['hora'] < 9)):
+            lista_transacoes_suspeitas.append(transacao) #lista suspeitos
+        
+    return f'TRANSACOES: {lista_transacoes}\n TRANSACOES SUSPEITAS: {lista_transacoes_suspeitas}'
 
 #Exercício 31: Contagem de Palavras em Textos
 # Dado um texto, contar quantas vezes cada palavra única aparece nele.
 def desafio31():
-    return None
+    texto = input('Digite um texto: ')
+    lista_texto = texto.replace(',',' ').replace('-',' ').replace('.',' ').split()
+    contador_palavras = len(lista_texto)
+    contador_palavras_diferentes = len(set(lista_texto))
+    
+    return f'       qtd palavras: {contador_palavras} \nqdt palavras diferentes: {contador_palavras_diferentes}'
 
 
 #Exercício 32. Normalização de Dados
