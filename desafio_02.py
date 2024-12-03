@@ -494,18 +494,24 @@ def desafio29():
         else:
             break
     email = input('Digite seu email: ')
-    idade_valida, email_valido = False
+    idade_valida = False
+    email_valido = False
     if idade >= 18 and idade <= 65:
         idade_valida = True
     if '@' in email: #arrumar para colocar ponto também
-        email_valido = True
+        if '.' in email.split('@')[1]: #se tiver '.' após '@'
+            email_valido = True
 
     if idade_valida == True and email_valido == True:
         return f'idade {idade} e email {email} válidos'
-    elif idade_valida == False and email_valido == False:
-        return f'idade {idade} e email {email} inválidos'
-    elif idade_valida == False and email_valido == True:
-        return f'idade {idade} e email {email} válidos'
+    else:
+        return 'dados inválidos'
+    #elif idade_valida == False and email_valido == False:
+    #    return f'idade {idade} e email {email} inválidos'
+    #elif idade_valida == False and email_valido == True:
+    #    return f'idade {idade} inválida e email {email} válido'
+    #elif idade_valida == True and email_valido == False:
+    #    return f'idade {idade} válida e email {email} inválido
 
 #Exercício 30: Detecção de Anomalias em Dados de Transações
 #Você está trabalhando em um sistema de detecção de fraude e precisa identificar transações suspeitas.
@@ -513,7 +519,15 @@ def desafio29():
 # comercial (antes das 9h ou depois das 18h). Dada uma transação como 
 # transacao = {'valor': 12000, 'hora': 20}, verifique se ela é suspeita.
 def desafio30():
-    return None
+    import random
+    lista_transacoes = []
+    for i in range(0,20):
+        transacao = {}
+        transacao['registro'] = i
+        transacao['valor'] = random.randint(1,20000)
+        transacao['hora'] = random.randint(0,23)
+        lista_transacoes.append(transacao)
+    return lista_transacoes
 
 #Exercício 31: Contagem de Palavras em Textos
 # Dado um texto, contar quantas vezes cada palavra única aparece nele.
