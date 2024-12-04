@@ -547,7 +547,22 @@ def desafio31():
 #Exercício 32. Normalização de Dados
 #Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 def desafio32():
-    return None
+    print('Neste desafio normalizarei sua lista de números reais.')
+    while True:
+        lista = []
+        lista_normalizada = []
+        try:
+            n = input("Digite um número real, ou digite '-' para finalizar: ")
+            if n == '-':
+                break
+            else:
+                lista.append(float(n))
+        except ValueError:
+            print('Você deve digitar um número real...')
+    for i in lista:
+        norm = i/max(lista)
+        lista_normalizada.append(norm)
+    return lista, lista_normalizada
 
 
 #Exercício 33. Filtragem de Dados Faltantes
