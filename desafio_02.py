@@ -548,9 +548,9 @@ def desafio31():
 #Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 def desafio32():
     print('Neste desafio normalizarei sua lista de números reais.')
+    lista = []
+    lista_normalizada = []
     while True:
-        lista = []
-        lista_normalizada = []
         try:
             n = input("Digite um número real, ou digite '-' para finalizar: ")
             if n == '-':
@@ -562,7 +562,7 @@ def desafio32():
     for i in lista:
         norm = i/max(lista)
         lista_normalizada.append(norm)
-    return lista, lista_normalizada
+    return f'sua lista: {lista} \nlista normalizada: {lista_normalizada}'
 
 
 #Exercício 33. Filtragem de Dados Faltantes
