@@ -569,6 +569,7 @@ def desafio32():
 #Dada uma lista de dicionários representando dados de usuários, 
 # filtrar aqueles que têm um campo específico faltando.
 def desafio33():
+    print('Neste desafio vou retornar os registros com campo em branco.')
     from random import choice
     choices = ['email@email.com','']
     emails = [{'nome': 'jose','email':choice(choices)},
@@ -588,6 +589,7 @@ def desafio33():
 #Exercício 34. Extração de Subconjuntos de Dados
 # Dada uma lista de números, extrair apenas aqueles que são pares.
 def desafio34():
+    print('Neste desafio vou extrair os números pares do conjunto de dados.')
     from random import randint
     qtd_lista = randint(3,10)
     lista = []
@@ -603,6 +605,7 @@ def desafio34():
 #Exercício 35. Agregação de Dados por Categoria
 #Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
 def desafio35():
+    print('Neste desafio vou realizar os somatórios agrupados das categorias de vendas.')
     from random import randint
     vendas = [
         {"categoria": "eletrônicos", "valor": randint(100,1000)},
@@ -627,6 +630,7 @@ def desafio35():
 #Exercício 36. Leitura de Dados até Flag
 #Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
 def desafio36():
+    print('Neste desafio vou registrar dados até que você queira sair.')
     lista = []
     while True:        
         texto = input('Digite uma palavra/número (ou "sair" para finalizar): ')
@@ -640,6 +644,7 @@ def desafio36():
 #Exercício 37. Validação de Entrada
 #Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
 def desafio37():
+    print('Neste desafio vou solicitar a entrada de dados até que seja válida.')
     while True:
         try:
             num = int(input('Digite um número entre 0 e 10: '))
@@ -654,17 +659,66 @@ def desafio37():
 #Simular o consumo de uma API paginada, 
 # onde cada "página" de dados é processada em loop até que não haja mais páginas.
 def desafio38():
-    return None
+    print('Neste desafio vou imprimir as páginas de uma API para você.')
+    from random import randint
+    pagina_atual = 0
+    total_paginas = randint(2,10)
+    with open('log.txt', 'w') as log:
+        while pagina_atual <= total_paginas:
+            log.write(f'Processando pg. {pagina_atual} de {total_paginas}\n')
+            pagina_atual += 1
+    with open('log.txt', 'r') as log:
+        conteudo = log.read()
+
+    return conteudo
+        
 
 #Exercício  39. Tentativas de Conexão
 #Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
 def desafio39():
-    return None
+    print('Neste desafio vou simular tentativas de conexão até um limite de 5')
+    from random import randint
+    max_tentativas = 5
+    tentativa = 1
+    with open('log.txt', 'w') as log:
+        while tentativa <= max_tentativas:
+                if randint(1,5) == 5:
+                    log.write('Conexão estabelecida')
+                    break
+                else:
+                    log.write(f'Tentativa {tentativa} de {max_tentativas}\n')
+                tentativa += 1
+        else:
+            log.write(f'Falha na conexão após {max_tentativas} tentativas.')
+
+    with open('log.txt', 'r') as log:
+        conteudo = log.read()
+                
+    return conteudo
 
 #Exercício 40. Processamento de Dados com Condição de Parada
 #Processar itens de uma lista até encontrar um valor específico que indica a parada.
 def desafio40():
-    return None
+    from random import choice
+    lista = []
+    for i in range(0,10):
+        if 'parar' in lista:
+            break
+        else:
+            lista.append(choice(['parar',i,i,i,i]))
+    with open('log.txt', 'w') as log:
+        i = 1
+        while i < len(lista):
+            if lista[i] == 'parar':
+                log.write('Parada encontrada, encerrando processamento.')
+                break
+            else:
+                log.write(f'Processando item {i} de {len(lista)}.\n')
+            i +=1
+
+    with open('log.txt', 'r') as log:
+        conteudo = log.read()
+    return lista,conteudo
 
 menu = """MENU DE DESAFIOS
 #01. Escreva um programa que soma dois números inteiros inseridos pelo usuário.
