@@ -569,29 +569,85 @@ def desafio32():
 #Dada uma lista de dicionários representando dados de usuários, 
 # filtrar aqueles que têm um campo específico faltando.
 def desafio33():
-    return None
+    from random import choice
+    choices = ['email@email.com','']
+    emails = [{'nome': 'jose','email':choice(choices)},
+              {'nome': 'maria','email':choice(choices)},
+              {'nome': 'joao','email':choice(choices)},
+              {'nome': 'pedro','email':choice(choices)},
+              {'nome': 'ana','email':choice(choices)}]
+    email_faltante = []
+    for nome in emails:
+        if nome['email'] == '':
+            email_faltante.append(nome['nome'])
+        
+              
+    return f' lista de emails: {emails}\n emails faltantes: {email_faltante}'
 
 
 #Exercício 34. Extração de Subconjuntos de Dados
 # Dada uma lista de números, extrair apenas aqueles que são pares.
 def desafio34():
-    return None
+    from random import randint
+    qtd_lista = randint(3,10)
+    lista = []
+    lista_pares = []
+    for i in range(0,qtd_lista):
+        numero = randint(0,100)
+        lista.append(numero)
+        if numero % 2 == 0:
+            lista_pares.append(numero)
+    return f'       lista = {lista}\n lista pares = {lista_pares}'
 
 
 #Exercício 35. Agregação de Dados por Categoria
 #Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
 def desafio35():
-    return None
+    from random import randint
+    vendas = [
+        {"categoria": "eletrônicos", "valor": randint(100,1000)},
+        {"categoria": "livros", "valor": randint(100,1000)},
+        {"categoria": "eletrônicos", "valor": randint(100,1000)},
+        {"categoria": "escritório", "valor": randint(100,1000)},
+        {"categoria": "escritório", "valor": randint(100,1000)},
+        {"categoria": "eletrônicos", "valor": randint(100,1000)},
+        {"categoria": "livros", "valor": randint(100,1000)}]
+    agregacao_por_categoria = {}
+
+    for venda in vendas:
+        categoria = venda['categoria']
+
+        valor = venda['valor']
+        if categoria in agregacao_por_categoria:
+            agregacao_por_categoria[categoria] += valor
+        else:
+            agregacao_por_categoria[categoria] = valor
+    return f'vendas:{vendas}\n{10*'-'}\nvendas por categoria: {agregacao_por_categoria}'
 
 #Exercício 36. Leitura de Dados até Flag
 #Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
 def desafio36():
-    return None
+    lista = []
+    while True:        
+        texto = input('Digite uma palavra/número (ou "sair" para finalizar): ')
+        if texto == 'sair':
+            break
+        else:
+            lista.append(texto)
+
+    return f'{lista}'
 
 #Exercício 37. Validação de Entrada
 #Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
 def desafio37():
-    return None
+    while True:
+        try:
+            num = int(input('Digite um número entre 0 e 10: '))
+        except ValueError:
+            'você não digitou um número'
+        if num >=0 and num <=10:
+            break
+    return f'você digitou o número {num}.'
 
 
 #Exercício 38. Consumo de API Simulado
