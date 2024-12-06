@@ -1,0 +1,6 @@
+Processando item 0 de 6.
+Processando item 1 de 6.
+Processando item 2 de 6.
+Processando item 3 de 6.
+Processando item 4 de 6.
+Parada encontrada, encerrando processamento.
