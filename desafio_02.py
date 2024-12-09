@@ -761,7 +761,7 @@ menu = """MENU DE DESAFIOS
 #38. Consumo de API Simulado
 #39. Tentativas de Conexão
 #40. Processamento de Dados com Condição de Parada
-
+#41. SAIR
 """
 
 
@@ -772,7 +772,7 @@ def main():
         desafio = None
         while desafio not in range(1,41):
             try:
-                desafio = int(input("Escolha o desafio de 1 a 40: \n"))
+                desafio = int(input("Escolha o desafio de 1 a 40 (41 para sair): \n"))
             except ValueError:
                 continue
         
