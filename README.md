@@ -4,7 +4,7 @@
 
 Repositório de desafios e atividades relacionados aos bootcamps da Jornada de Dados.
 
- # `Desafio 01`
+  # `Desafio 01`
 Criar um programa que calcula o bônus de uma pessoa através do cálculo de um KPI, tratando erros comuns de usuários.
 
 
@@ -18,3 +18,8 @@ Bateria de 25 exercícios básicos para python:
 - 5 de controle de fluxo,
 - 5 de FOR,
 - 5 de WHILE.
+
+# `Desafio 03`
+Leitura de bilhão de linhas
+Conhecimentos de Typehints e variáveis complexas.
+<var>: <tipo> = <valor inicial> # a partir de Python 5
