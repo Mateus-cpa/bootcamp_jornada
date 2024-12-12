@@ -160,16 +160,26 @@ def desafio10():
 #11. Extração de Chaves e Valores
 #Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
 def desafio11():
-    print('Neste desafio ')
+    print('Neste desafio separarei em listas separadas as chaves e os valores.')
     dicionario = {"a": 1, "b": 2, "c": 3}
-    return None
+    lista_chaves = list(dicionario.keys())
+    lista_valores = list(dicionario.values())
+    return f'dicionario: {dicionario}\nchaves: {lista_chaves}\nvalores: {lista_valores}'
 
 #12. Contagem de Frequência de Itens
 #Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
 def desafio12():
-    print('Neste desafio ')
-    texto = "engenharia de dados"
-    return None
+    print('Neste desafio contarei a frequência de cada caractere do texto inserido.')
+    texto: str = input('digite um texto: ')
+    lista_texto = list(texto)
+    dicionario_texto = {}
+    for caractere in lista_texto:
+        if caractere not in dicionario_texto.keys():
+            dicionario_texto[caractere] = 1
+        else:
+            dicionario_texto[caractere] += 1
+    dicionario_texto_ordenado = sorted(dicionario_texto.items(), key = lambda x: x[1], reverse = True) #ordenar por maior quantidade
+    return f'{dicionario_texto}\n{dicionario_texto_ordenado}'
 
 
 menu = """MENU DE DESAFIOS
@@ -196,7 +206,7 @@ def main():
         desafio = None
         while desafio not in range(1,13):
             try:
-                desafio = 10#int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
+                desafio = int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
             except ValueError:
                 continue
         
