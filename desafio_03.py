@@ -89,27 +89,42 @@ def desafio05():
 #6. Agregação de Dados
 #Objetivo: Dado um conjunto de números, calcular a média.
 def desafio06():
-    print('Neste desafio ')
-    numeros = [10, 20, 30, 40, 50]
-    return None
+    print('Neste desafio calcularei a média de números aleatórios')
+    from random import randint
+    numeros = [randint(5,50), randint(5,50), randint(5,50), randint(5,50), randint(5,50)]   
+    return f'Números: {numeros}\n Média: {sum(numeros)/len(numeros)}'
 
 #7. Divisão de Dados em Grupos
 #Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
 def desafio07():
-    print('Neste desafio ')
-    valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    return None
+    print('Neste desafio repararei os números pares ou ímpares.')
+    from random import randint
+    valores = []
+    for i in range(0,9):
+        valores.append(randint (-10,10))
+    pares = []
+    impares = []
+    for n in valores:
+        if n % 2 == 0:
+            pares.append(n)
+        else:
+            impares.append(n)
+    return f'Valores: {valores}\n  Pares: {pares}\nÍmpares: {impares}'
 
 #8. Atualização de Dados
 #Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
 def desafio08():
-    print('Neste desafio ')
+    from random import randint
+    print('Neste desafio atualizarei o preço de um produto para 200.')
     produtos = [
         {"id": 1, "nome": "Teclado", "preço": 100},
         {"id": 2, "nome": "Mouse", "preço": 80},
         {"id": 3, "nome": "Monitor", "preço": 300}
     ]
-    return None
+    from copy import deepcopy
+    produtos_alterados = deepcopy(produtos)
+    produtos_alterados[randint(0,2)]['preço'] = 200
+    return f'{produtos}\n{produtos_alterados}'
 
 # Atualizar o preço do produto com id 2 para 90
 
@@ -167,7 +182,7 @@ def main():
         desafio = None
         while desafio not in range(1,13):
             try:
-                desafio = 5 #int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
+                desafio = int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
             except ValueError:
                 continue
         
