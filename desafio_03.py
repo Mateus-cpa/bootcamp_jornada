@@ -2,12 +2,32 @@
 # incluindo Título, autor e ano de publicação. Imprima cada informação
 def desafio01():
     from typing import Dict, Any
-    
-    livro:Dict[str, Any] = {
-        "Título": "Bíblia",
+    print('Neste desafio retornarei um dicionário de livros ')
+    from random import randint
+
+    livros:list[Dict] = [{"Título": "Bíblia",
         "Autor": "Vários",
-        "Ano": -4000}
-    return livro
+        "Ano": -4000},
+        {"Título": "Odisseia",
+        "Autor": "Homero",
+        "Ano": -700},
+        {"Título": "Ilíada",
+        "Autor": "Homero",
+        "Ano": -800},
+        {"Título": "A República",
+        "Autor": "Platão",
+        "Ano": -380},
+        {"Título": "Alcorão",
+        "Autor": "Maomé",
+        "Ano": 800},
+        {"Título": "Divina Comédia",
+        "Autor": "Dante Alighieri",
+        "Ano": 1321},
+        {"Título": "Do Cativeiro Babilônico da Igreja",
+        "Autor": "Martinho Lutero",
+        "Ano": 1520}]
+    
+    return f'Livro selecionado: {livros[randint(0,6)]}'
 
 
 
@@ -18,6 +38,7 @@ def desafio02():
 
     lista_compras = ["maçã", "banana", "cereja"]
     precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+
     return None
 
 
