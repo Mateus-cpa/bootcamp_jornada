@@ -131,18 +131,32 @@ def desafio08():
 #9. Fusão de Dicionários
 #Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
 def desafio09():
-    print('Neste desafio ')
+    print('Neste desafio fundirei dois dicionários.')
     dicionario1 = {"a": 1, "b": 2}
     dicionario2 = {"c": 3, "d": 4}
+    dicionarios = dicionario1 | dicionario2
+    
 
-    return None
+    return dicionarios
 
 #10. Filtragem de Dados em Dicionário
 #Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
 def desafio10():
-    print('Neste desafio ')
+    print('Neste desafio filtrarei um dicionário apenas com produtos com saldo.')
     estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
-    return None
+
+    def em_estoque(pair):
+        "Função ue retorna se estoque for maior que 0."
+        key,value = pair
+        if value > 0:
+            return True
+        else:
+            return False
+        
+    itens_em_estoque = dict(filter(em_estoque, estoque.items()))
+    
+    return itens_em_estoque
+
 #11. Extração de Chaves e Valores
 #Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
 def desafio11():
@@ -182,7 +196,7 @@ def main():
         desafio = None
         while desafio not in range(1,13):
             try:
-                desafio = int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
+                desafio = 10#int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
             except ValueError:
                 continue
         
