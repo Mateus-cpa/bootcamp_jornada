@@ -19,7 +19,12 @@ Bateria de 25 exercícios básicos para python:
 - 5 de FOR,
 - 5 de WHILE.
 
-# `Desafio 03`
-Leitura de bilhão de linhas
+# `Desafio 03` - Variáveis complexas
+Nova bateria de 12 desafios de 
+- listas, 
+- dictionaries,
+- sets e
+- typehints `<var>: <tipo> = <valor inicial>`
+
+# `Desafio Leitura de bilhão de linhas`
 Conhecimentos de Typehints e variáveis complexas.
-<var>: <tipo> = <valor inicial> # a partir de Python 5
