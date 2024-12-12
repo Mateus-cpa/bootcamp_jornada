@@ -35,7 +35,7 @@ def desafio01():
 #2. Preço total da lista de compras
 def desafio02():
     from typing import Dict, Any
-
+    print('Neste desafio ')
     lista_compras = ["maçã", "banana", "cereja"]
     precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
     soma = 0
@@ -48,6 +48,7 @@ def desafio02():
 #3. Eliminação de Duplicatas 
 # Objetivo: Dada uma lista de emails, remover todos os duplicados.
 def desafio03():
+    print('Neste desafio retirarei duplicatas da lista de emails')
     emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
     emails_sem_duplicatas = set(emails)
     n_total_emails = len(emails)
@@ -57,36 +58,52 @@ def desafio03():
 #4. Filtragem de Dados
 #Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
 def desafio04():
-    idades = [22, 15, 30, 17, 18]
-    return None
+    print('Neste desafio gerarei uma lista de idades e separarei apenas os maiores ou iguais a 18.')
+    from random import randint    
+    idades = []
+    for i in range (0,8):
+        idades.append(randint(1,60))
+    maiores_de_idade = []
+    for idade in idades:
+        if idade >=18:
+            maiores_de_idade.append(idade)
+    return f'{maiores_de_idade} são maiores de idade da lista {idades}'
+
 #5. Ordenação Personalizada
 #Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
 def desafio05():
-
+    print('Neste desafio ordenarei os nomes pela idade.')
+    from random import randint
     pessoas = [
-        {"nome": "Alice", "idade": 30},
-        {"nome": "Bob", "idade": 25},
-        {"nome": "Carol", "idade": 20}]
-    return None
+        {"nome": "Mateus", "idade": randint(4,65)},
+        {"nome": "Rejane", "idade": randint(4,65)},
+        {"nome": "Mel", "idade": randint(4,65)},
+        {"nome": "Ian", "idade": randint(4,65)},
+        {"nome": "Alice", "idade": randint(4,65)},
+        {"nome": "Bob", "idade": randint(4,65)},
+        {"nome": "Carol", "idade": randint(4,65)}]
+    pessoas_ordenadas = sorted(pessoas, key=lambda registro: registro['idade'])    
+    return pessoas_ordenadas # retorna cada item em uma linha
+
 
 #6. Agregação de Dados
 #Objetivo: Dado um conjunto de números, calcular a média.
 def desafio06():
-
+    print('Neste desafio ')
     numeros = [10, 20, 30, 40, 50]
     return None
 
 #7. Divisão de Dados em Grupos
 #Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
 def desafio07():
-
+    print('Neste desafio ')
     valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     return None
 
 #8. Atualização de Dados
 #Objetivo: Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
 def desafio08():
-
+    print('Neste desafio ')
     produtos = [
         {"id": 1, "nome": "Teclado", "preço": 100},
         {"id": 2, "nome": "Mouse", "preço": 80},
@@ -99,7 +116,7 @@ def desafio08():
 #9. Fusão de Dicionários
 #Objetivo: Dados dois dicionários, fundi-los em um único dicionário.
 def desafio09():
-
+    print('Neste desafio ')
     dicionario1 = {"a": 1, "b": 2}
     dicionario2 = {"c": 3, "d": 4}
 
@@ -108,20 +125,20 @@ def desafio09():
 #10. Filtragem de Dados em Dicionário
 #Objetivo: Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
 def desafio10():
-
+    print('Neste desafio ')
     estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
     return None
 #11. Extração de Chaves e Valores
 #Objetivo: Dado um dicionário, criar listas separadas para suas chaves e valores.
 def desafio11():
-
+    print('Neste desafio ')
     dicionario = {"a": 1, "b": 2, "c": 3}
     return None
 
 #12. Contagem de Frequência de Itens
 #Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
 def desafio12():
-
+    print('Neste desafio ')
     texto = "engenharia de dados"
     return None
 
@@ -150,7 +167,7 @@ def main():
         desafio = None
         while desafio not in range(1,13):
             try:
-                desafio = int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
+                desafio = 5 #int(input("Escolha o desafio de 1 a 12 (13 para sair): \n"))
             except ValueError:
                 continue
         
