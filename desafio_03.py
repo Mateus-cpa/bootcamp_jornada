@@ -38,8 +38,11 @@ def desafio02():
 
     lista_compras = ["maçã", "banana", "cereja"]
     precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+    soma = 0
+    for valor in precos.values():
+        soma += valor
 
-    return None
+    return f'O total das compras {precos} = {soma}'
 
 
 #3. Eliminação de Duplicatas 
