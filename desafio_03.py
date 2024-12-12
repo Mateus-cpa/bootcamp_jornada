@@ -49,7 +49,10 @@ def desafio02():
 # Objetivo: Dada uma lista de emails, remover todos os duplicados.
 def desafio03():
     emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
-    return None
+    emails_sem_duplicatas = set(emails)
+    n_total_emails = len(emails)
+    n_emails_unicos = len(emails_sem_duplicatas)
+    return f'A listagem sem duplicatas é {emails_sem_duplicatas} ({n_emails_unicos} do total de {n_total_emails})'
 
 #4. Filtragem de Dados
 #Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
